@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>计算器</title>
+    <link rel="stylesheet" href="../css/sempleCal.css">
+    <link rel="stylesheet" href="../css/kexue.css">
+    <link rel="stylesheet" href="../css/calculate.css">
+    <script type="text/javascript" src="../js/kexue.js"></script>
+    <script type="text/javascript" src="../js/calculate.js"></script>
+</head>
+<body>
+<!--转换按钮模块开始-->
+<div class="calculator">
+    <input type="button" value="简单计算器" id="btn1">
+    <input type="button" value="科学计算器" id="btn2">
+</div>
+<!--转换按钮模块结束-->
+
+<!--显示框以及退格，清零模块开始-->
+<div class="display_num">
+    <div class="display_num_left">
+        <input type="text" id="txtnum" disabled="disabled">
+    </div>
+    <div class="display_num_right">
+        <input type="button" id="cc" value="C"
+               onclick="txtnum.value='0';result=0 ">
+        <input type="button" id="tg" value="DEL"
+               onclick="backspace()">
+    </div>
+</div>
+<!--显示框模块结束-->
+
+<!--简单计算器区域开始-->
+<div id="sempleCal">
+    <div class="calculator_body">
+        <div class="calculator_bottom">
+            <ul>
+                <li>
+                    <input type="button" value="7"
+                           onclick="num('7')">
+                </li>
+                <li>
+                    <input type="button" value="8"
+                           onclick="num('8')">
+                </li>
+                <li>
+                    <input type="button" value="9"
+                           onclick="num('9')">
+                </li>
+                <li>
+                    <input type="button" value="+"
+                           onclick="compute('+')">
+                </li>
+                <li>
+                    <input type="button" value="4"
+                           onclick="num('4')">
+                </li>
+                <li>
+                    <input type="button" value="5"
+                           onclick="num('5')">
+                </li>
+                <li>
+                    <input type="button" value="6"
+                           onclick="num('6')">
+                </li>
+                <li>
+                    <input type="button" value="-"
+                           onclick="compute('-')">
+                </li>
+                <li>
+                    <input type="button" value="1"
+                           onclick="num('1')">
+                </li>
+                <li>
+                    <input type="button" value="2"
+                           onclick="num('2')">
+                </li>
+                <li>
+                    <input type="button" value="3"
+                           onclick="num('3')">
+                </li>
+                <li>
+                    <input type="button" value="×"
+                           onclick="compute('*')">
+                </li>
+                <li>
+                    <input type="button" value="0"
+                           onclick="num('0')">
+                </li>
+                <li>
+                    <input type="button" value="." onclick="decimal()">
+                </li>
+                <li>
+                    <input type="button" value="="
+                           onclick="compute('=')">
+                </li>
+                <li>
+                    <input type="button" value="÷"
+                           onclick="compute('/')">
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--简单计算器模块结束-->
+
+<!--科学计算器区域开始-->
+<div id="kexue">
+    <div class="kexue_body">
+        <div class="kexue_bottom">
+
+            <!--科学键模块-->
+            <ul>
+                <li>
+                    <input type="button" id="sin" value="sin"
+                           onclick="math('sin')">
+                </li>
+                <li>
+                    <input type="button" id="cos" value="cos"
+                           onclick="math('cos')">
+                </li>
+                <li>
+                    <input type="button" id="tan" value="tan"
+                           onclick="math('tan')">
+                </li>
+                <li>
+                    <input type="button" id="asin" value="asin"
+                           onclick="math('asin')">
+                </li>
+                <li>
+                    <input type="button" id="acon" value="acon"
+                           onclick="math('acon')">
+                </li>
+                <li>
+                    <input type="button" id="atan" value="atan"
+                           onclick="math('atan')">
+                </li>
+                <li>
+                    <input type="button" id="PI" value="PI"
+                           onclick="math('PI')">
+                </li>
+                <li>
+                    <input type="button" value="1/x"
+                           onclick="math('1/x')">
+                </li>
+                <li>
+                    <input type="button" value="exp"
+                           onclick="math('exp')">
+                </li>
+                <li>
+                    <input type="button" value="lnx"
+                           onclick="math('lnx')">
+                </li>
+                <li>
+                    <input type="button" value="lgx"
+                           onclick="math('lgx')">
+                </li>
+                <li>
+                    <input type="button" value="n!"
+                           onclick="math('n!')">
+                </li>
+            </ul>
+
+            <!--数字键模块-->
+            <ul>
+                <li>
+                    <input type="button" value="7"
+                           onclick="num('7')">
+                </li>
+                <li>
+                    <input type="button" value="8"
+                           onclick="num('8')">
+                </li>
+                <li>
+                    <input type="button" value="9"
+                           onclick="num('9')">
+                </li>
+                <li>
+                    <input type="button" value="4"
+                           onclick="num('4')">
+                </li>
+                <li>
+                    <input type="button" value="5"
+                           onclick="num('5')">
+                </li>
+                <li>
+                    <input type="button" value="6"
+                           onclick="num('6')">
+                </li>
+                <li>
+                    <input type="button" value="1"
+                           onclick="num('1')">
+                </li>
+                <li>
+                    <input type="button" value="2"
+                           onclick="num('2')">
+                </li>
+                <li>
+                    <input type="button" value="3"
+                           onclick="num('3')">
+                </li>
+                <li>
+                    <input type="button" value="0"
+                           onclick="num('0')">
+                </li>
+                <li>
+                    <input type="button" value="." onclick="decimal()">
+                </li>
+                <li>
+                    <input type="button" value="="
+                           onclick="compute('=')">
+                </li>
+            </ul>
+
+            <!--运算符模块-->
+            <ul>
+                <li>
+                    <input type="button" value="+"
+                           onclick="compute('+')">
+                </li>
+                <li>
+                    <input type="button" value="取整"
+                           onclick="math('i')">
+                </li>
+                <li>
+                    <input type="button" value="-"
+                           onclick="compute('-')">
+                </li>
+                <li>
+                    <input type="button" value="取余"
+                           onclick="compute('%')">
+                </li>
+                <li>
+                    <input type="button" value="×"
+                           onclick="compute('*')">
+                </li>
+                <li>
+                    <input type="button" value="x^y"
+                           onclick="compute('x^y')">
+                </li>
+                <li>
+                    <input type="button" value="÷"
+                           onclick="compute('/')">
+                </li>
+                <li>
+                    <input type="button" value="+/-"
+                           onclick="reverse()">
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
